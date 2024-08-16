@@ -22,7 +22,3 @@ If you have any questions or need further assistance, please don't hesitate to c
 
 * Emily Dennis: Emily.Dennis@hsc.utah.edu
 * Adrian Onicas: adrian.onicas@hsc.utah.edu
-
-We're here to help!
-
-**Good luck with the challenge!** 
