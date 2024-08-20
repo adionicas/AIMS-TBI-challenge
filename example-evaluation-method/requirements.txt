@@ -1,0 +1,6 @@
+SimpleITK
+numpy
+nibabel
+argparse
+connected-components-3d
+pandas

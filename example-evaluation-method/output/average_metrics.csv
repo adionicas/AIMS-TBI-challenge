@@ -1,0 +1,5 @@
+Metric,Mean Value,Standard Deviation
+Dice_coefficient,0.7576250779575932,0.17342927553289064
+Absolute_volume_difference,8.839333333333334,8.960760991989218
+Absolute_lesion_difference,0.6666666666666666,0.9428090415820634
+Lesion-wise_F1-score,1.0,0.0

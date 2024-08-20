@@ -1,0 +1,37 @@
+{
+    "results": [
+        {
+            "Volume": 1,
+            "Dice_coefficient": 1.0,
+            "Absolute_volume_difference": 0.0,
+            "Absolute_lesion_difference": 0,
+            "Lesion-wise_F1-score": 1.0
+        },
+        {
+            "Volume": 2,
+            "Dice_coefficient": 0.6689548168696224,
+            "Absolute_volume_difference": 21.123000000000005,
+            "Absolute_lesion_difference": 2,
+            "Lesion-wise_F1-score": 1.0
+        },
+        {
+            "Volume": 3,
+            "Dice_coefficient": 0.6039204170031569,
+            "Absolute_volume_difference": 5.3950000000000005,
+            "Absolute_lesion_difference": 0,
+            "Lesion-wise_F1-score": 1.0
+        }
+    ],
+    "aggregate": {
+        "Dice_coefficient_mean": 0.7576250779575932,
+        "Absolute_volume_difference_mean": 8.839333333333334,
+        "Absolute_lesion_difference_mean": 0.6666666666666666,
+        "Lesion-wise_F1-score_mean": 1.0
+    },
+    "deviation": {
+        "Dice_coefficient_sd": 0.17342927553289064,
+        "Absolute_volume_difference_sd": 8.960760991989218,
+        "Absolute_lesion_difference_sd": 0.9428090415820634,
+        "Lesion-wise_F1-score_sd": 0.0
+    }
+}
