@@ -1,0 +1,212 @@
+[
+  {
+    "pk": "1d2fde87-ef24-4be5-9933-4897771d858f",
+    "url": "https://grand-challenge.org/algorithms/example-algorithm-aims-tbi/jobs/01bbfb8f-4180-467c-88cd-6a9ad5fba5d9/",
+    "inputs": [
+      {
+        "pk": 1911618,
+        "file": null,
+        "image": {
+          "pk": "96f2f1b0-52a8-4037-ace7-0f9a53c85029",
+          "name": "scan_0632_T1.nii.gz"
+        },
+        "value": null,
+        "interface": {
+          "pk": 127,
+          "kind": "Image",
+          "slug": "t1-brain-mri",
+          "title": "T1 Brain MRI",
+          "super_kind": "Image",
+          "description": "T1 weighted MRI of the brain",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/t1-brain-mri",
+          "overlay_segments": []
+        }
+      }
+    ],
+    "status": "Succeeded",
+    "api_url": "https://grand-challenge.org/api/v1/algorithms/jobs/01bbfb8f-4180-467c-88cd-6a9ad5fba5d9/",
+    "outputs": [
+      {
+        "pk": 1915782,
+        "file": null,
+        "image": {
+          "pk": "96f2f1b0-52a8-4037-ace7-0f9a53c85029",
+          "name": "output.mha"
+        },
+        "value": null,
+        "interface": {
+          "pk": 462,
+          "kind": "Segmentation",
+          "slug": "traumatic-brain-injury-segmentation",
+          "title": "Traumatic Brain Injury Segmentation",
+          "super_kind": "Image",
+          "description": "Traumatic Brain Injury Segmentation where 0-background 1-lesion",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/tbi-segmentation",
+          "overlay_segments": [
+            {
+              "name": "Background",
+              "visible": true,
+              "voxel_value": 0
+            },
+            {
+              "name": "TBI lesion",
+              "visible": true,
+              "voxel_value": 1
+            }
+          ]
+        }
+      }
+    ],
+    "started_at": "2024-05-27T14:24:40.093355Z",
+    "completed_at": "2024-05-27T14:26:53.596355Z",
+    "view_content": {},
+    "algorithm_image": "Algorithm image 63ff0509-c8af-496c-8a89-1d6ee6e2eb56 for Example algorithm AIMS-TBI",
+    "hanging_protocol": null,
+    "rendered_result_text": "",
+    "optional_hanging_protocols": []
+  },
+  {
+    "pk": "9d8ff109-a379-4380-9ab4-f7212a309275",
+    "url": "https://grand-challenge.org/algorithms/example-algorithm-aims-tbi/jobs/05efe21d-f949-439b-81fc-9db31a9a1846/",
+    "inputs": [
+      {
+        "pk": 1911619,
+        "file": null,
+        "image": {
+          "pk": "35989c05-532a-4c89-a463-1d4408add97c",
+          "name": "scan_0646_T1.nii.gz"
+        },
+        "value": null,
+        "interface": {
+          "pk": 127,
+          "kind": "Image",
+          "slug": "t1-brain-mri",
+          "title": "T1 Brain MRI",
+          "super_kind": "Image",
+          "description": "T1 weighted MRI of the brain",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/t1-brain-mri",
+          "overlay_segments": []
+        }
+      }
+    ],
+    "status": "Succeeded",
+    "api_url": "https://grand-challenge.org/api/v1/algorithms/jobs/05efe21d-f949-439b-81fc-9db31a9a1846/",
+    "outputs": [
+      {
+        "pk": 1915779,
+        "file": null,
+        "image": {
+          "pk": "35989c05-532a-4c89-a463-1d4408add97c",
+          "name": "output.mha"
+        },
+        "value": null,
+        "interface": {
+          "pk": 462,
+          "kind": "Segmentation",
+          "slug": "traumatic-brain-injury-segmentation",
+          "title": "Traumatic Brain Injury Segmentation",
+          "super_kind": "Image",
+          "description": "Traumatic Brain Injury Segmentation where 0-background 1-lesion",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/tbi-segmentation",
+          "overlay_segments": [
+            {
+              "name": "Background",
+              "visible": true,
+              "voxel_value": 0
+            },
+            {
+              "name": "TBI lesion",
+              "visible": true,
+              "voxel_value": 1
+            }
+          ]
+        }
+      }
+    ],
+    "started_at": "2024-05-27T14:24:14.748030Z",
+    "completed_at": "2024-05-27T14:26:23.416030Z",
+    "view_content": {},
+    "algorithm_image": "Algorithm image 63ff0509-c8af-496c-8a89-1d6ee6e2eb56 for Example algorithm AIMS-TBI",
+    "hanging_protocol": null,
+    "rendered_result_text": "",
+    "optional_hanging_protocols": []
+  },
+  {
+    "pk": "e1a9451b-fa42-4c5c-bef2-b74328d6d80b",
+    "url": "https://grand-challenge.org/algorithms/example-algorithm-aims-tbi/jobs/fc70406a-75b6-4bdd-addb-1ec8e14da91c/",
+    "inputs": [
+      {
+        "pk": 1911586,
+        "file": null,
+        "image": {
+          "pk": "52511708-2393-47f1-b2b7-02417d0bb0a5",
+          "name": "scan_0277_T1.nii.gz"
+        },
+        "value": null,
+        "interface": {
+          "pk": 127,
+          "kind": "Image",
+          "slug": "t1-brain-mri",
+          "title": "T1 Brain MRI",
+          "super_kind": "Image",
+          "description": "T1 weighted MRI of the brain",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/t1-brain-mri",
+          "overlay_segments": []
+        }
+      }
+    ],
+    "status": "Succeeded",
+    "api_url": "https://grand-challenge.org/api/v1/algorithms/jobs/fc70406a-75b6-4bdd-addb-1ec8e14da91c/",
+    "outputs": [
+      {
+        "pk": 1915745,
+        "file": null,
+        "image": {
+          "pk": "52511708-2393-47f1-b2b7-02417d0bb0a5",
+          "name": "output.mha"
+        },
+        "value": null,
+        "interface": {
+          "pk": 462,
+          "kind": "Segmentation",
+          "slug": "traumatic-brain-injury-segmentation",
+          "title": "Traumatic Brain Injury Segmentation",
+          "super_kind": "Image",
+          "description": "Traumatic Brain Injury Segmentation where 0-background 1-lesion",
+          "default_value": null,
+          "look_up_table": null,
+          "relative_path": "images/tbi-segmentation",
+          "overlay_segments": [
+            {
+              "name": "Background",
+              "visible": true,
+              "voxel_value": 0
+            },
+            {
+              "name": "TBI lesion",
+              "visible": true,
+              "voxel_value": 1
+            }
+          ]
+        }
+      }
+    ],
+    "started_at": "2024-05-27T14:15:32.126282Z",
+    "completed_at": "2024-05-27T14:17:45.936282Z",
+    "view_content": {},
+    "algorithm_image": "Algorithm image 63ff0509-c8af-496c-8a89-1d6ee6e2eb56 for Example algorithm AIMS-TBI",
+    "hanging_protocol": null,
+    "rendered_result_text": "",
+    "optional_hanging_protocols": []
+  }
+]

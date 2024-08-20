@@ -1,0 +1,110 @@
+[
+    {
+        "pk": "1d2fde87-ef24-4be5-9933-4897771d858f",
+        "inputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "96f2f1b0-52a8-4037-ace7-0f9a53c85029.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "t1-brain-mri",
+                    "kind": "Image",
+                    "super_kind": "Image",
+                    "relative_path": "images/t1-brain-mri"
+                }
+            }
+        ],
+        "outputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "96f2f1b0-52a8-4037-ace7-0f9a53c85029.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "traumatic-brain-injury-segmentation",
+                    "kind": "Segmentation",
+                    "super_kind": "Image",
+                    "relative_path": "images/tbi-segmentation"
+                }
+            }
+        ],
+        "status": "Succeeded",
+        "started_at": "2023-11-29T10:31:25.691799Z",
+        "completed_at": "2023-11-29T10:31:50.691799Z"
+    },
+    {
+        "pk": "9d8ff109-a379-4380-9ab4-f7212a309275",
+        "inputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "35989c05-532a-4c89-a463-1d4408add97c.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "t1-brain-mri",
+                    "kind": "Image",
+                    "super_kind": "Image",
+                    "relative_path": "images/t1-brain-mri"
+                }
+            }
+        ],
+        "outputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "35989c05-532a-4c89-a463-1d4408add97c.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "traumatic-brain-injury-segmentation",
+                    "kind": "Segmentation",
+                    "super_kind": "Image",
+                    "relative_path": "images/tbi-segmentation"
+                }
+            }
+        ],
+        "status": "Succeeded",
+        "started_at": "2023-11-29T10:31:25.691799Z",
+        "completed_at": "2023-11-29T10:31:50.691799Z"
+    },
+    {
+        "pk": "e1a9451b-fa42-4c5c-bef2-b74328d6d80b",
+        "inputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "52511708-2393-47f1-b2b7-02417d0bb0a5.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "t1-brain-mri",
+                    "kind": "Image",
+                    "super_kind": "Image",
+                    "relative_path": "images/t1-brain-mri"
+                }
+            }
+        ],
+        "outputs": [
+            {
+                "file": null,
+                "image": {
+                    "name": "52511708-2393-47f1-b2b7-02417d0bb0a5.mha"
+                },
+                "value": null,
+                "interface": {
+                    "slug": "traumatic-brain-injury-segmentation",
+                    "kind": "Segmentation",
+                    "super_kind": "Image",
+                    "relative_path": "images/tbi-segmentation"
+                }
+            }
+        ],
+        "status": "Succeeded",
+        "started_at": "2023-11-29T10:31:25.691799Z",
+        "completed_at": "2023-11-29T10:31:50.691799Z"
+    }
+]
