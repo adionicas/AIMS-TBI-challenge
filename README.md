@@ -13,7 +13,7 @@ BraTS challenges and BrainWorks workshop. This year the challenge features two t
 MRI training data. Evaluation is performed on T1-weighted MRI only.
 
 For the complete challenge design document, see the
-[BIAS challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
+[challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
 
 ## Getting Started
 
