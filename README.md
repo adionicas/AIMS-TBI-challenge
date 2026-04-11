@@ -4,6 +4,17 @@ Thank you for submitting to the AIMS-TBI segmentation challenge!
 
 This repository provides an example method for the AIMS TBI Segmentation Challenge.
 
+## Challenge Description
+
+AIMS-TBI 2026 is the 3rd iteration of the Automated Identification of Moderate-Severe
+Traumatic Brain Injury Lesions challenge, held at MICCAI 2026 in association with the
+BraTS challenges and BrainWorks workshop. This year the challenge features two tasks —
+**lesion detection** and **lesion segmentation** — with dual leaderboards and multimodal
+MRI training data. Evaluation is performed on T1-weighted MRI only.
+
+For the complete challenge design document, see the
+[BIAS challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
+
 ## Getting Started
 
 1. **Test Run:** Execute `test_run.sh` to run the Python script `inference.py`. This will give you a basic idea of how the process works.
