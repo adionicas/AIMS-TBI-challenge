@@ -1,8 +1,6 @@
 # AIMS-TBI-challenge
 
-Thank you for submitting to the AIMS-TBI segmentation challenge! 
-
-This repository provides an example method for the AIMS TBI Segmentation Challenge.
+This repository provides a baseline example algorithm for the [AIMS-TBI 2026 Segmentation Challenge](https://aims-tbi26.grand-challenge.org/). Participants can use this template to develop and package their segmentation methods as Docker containers for evaluation on the challenge platform.
 
 ## Challenge Description
 
