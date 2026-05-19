@@ -12,6 +12,8 @@ BraTS challenges and BrainWorks workshop. This year the challenge features two t
 **lesion detection** and **lesion segmentation** — with dual leaderboards and multimodal
 MRI training data. Evaluation is performed on T1-weighted MRI only.
 
+Visit the [official challenge page](https://aims-tbi26.grand-challenge.org/) for registration and submissions.
+
 For the complete challenge design document, see the
 [challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
 
