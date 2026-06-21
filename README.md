@@ -8,7 +8,7 @@ This repository provides the runtime contract and example algorithms for both ch
 The 2026 challenge has two separate phases, each with its own leaderboard:
 
 - **Detection**: for each scan, decide whether a lesion is present. Image-level classification.
-- **Segmentation**: delineate the lesion voxels. Voxel-level.
+- **Segmentation**: delineate the lesion voxels.
 
 Training data are multimodal MRI. Evaluation uses the T1-weighted scan only.
 
