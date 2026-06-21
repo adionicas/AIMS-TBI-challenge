@@ -1,35 +1,71 @@
-# AIMS-TBI-challenge
+# AIMS-TBI 2026 Challenge
 
-This repository provides a baseline example algorithm for the [AIMS-TBI 2026 Segmentation Challenge](https://aims-tbi26.grand-challenge.org/). Participants can use this template to develop and package their segmentation methods as Docker containers for evaluation on the challenge platform.
+Automated Identification of Moderate-Severe Traumatic Brain Injury Lesions, third edition, MICCAI 2026.
+Register and submit at https://aims-tbi26.grand-challenge.org/
 
-## Challenge Description
+This repository provides the runtime contract and example algorithms for both challenge tasks.
 
-AIMS-TBI 2026 is the 3rd iteration of the Automated Identification of Moderate-Severe
-Traumatic Brain Injury Lesions challenge, held at MICCAI 2026 in association with the
-BraTS challenges and BrainWorks workshop. This year the challenge features two tasks —
-**lesion detection** and **lesion segmentation** — with dual leaderboards and multimodal
-MRI training data. Evaluation is performed on T1-weighted MRI only.
+## Two tasks, two leaderboards
 
-Visit the [official challenge page](https://aims-tbi26.grand-challenge.org/) for registration and submissions.
+The 2026 challenge has two separate phases, each with its own leaderboard:
 
-For the complete challenge design document, see the
-[challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
+- **Detection**: for each scan, decide whether a lesion is present. Image-level classification.
+- **Segmentation**: delineate the lesion voxels. Voxel-level.
 
-## Getting Started
+Training data are multimodal MRI. Evaluation uses the T1-weighted scan only.
 
-1. **Test Run:** Execute `test_run.sh` to run the Python script `inference.py`. This will give you a basic idea of how the process works.
+## What your algorithm reads and writes
 
-2. **Implement Your Segmentation:** Open `inference.py` and modify the `segment_image` function to include your own segmentation algorithm. **Important:** Please keep the line `"segmented_image = segmented_image.astype(np.int8)"` unchanged. This is necessary for compatibility with the challenge website.
+Every algorithm receives one input and must produce one output, defined by Grand Challenge "sockets". At runtime the input image is always provided as `.mha`.
 
-3. **Save Docker Image:** Once you're satisfied with your segmentation results, run `save.sh` to create the Docker image. This image is what you'll submit to the challenge.
+**Input (both tasks)**
+- Socket `t1-brain-mri`. Provided at `/input/images/t1-brain-mri/<id>.mha`.
 
-## Recommendations
+**Output for Detection**
+- Socket `brain-lesion-presence`. Write a single JSON boolean (`true` if a lesion is present, `false` otherwise) to `/output/brain-lesion-presence.json`.
 
-* **Test Locally:** It's strongly recommended to thoroughly test your implementation locally before generating the final Docker image. The challenge website's environment can be time-consuming.
+**Output for Segmentation**
+- Socket `traumatic-brain-injury-segmentation`. Write a binary mask (0 background, 1 lesion) to `/output/images/tbi-segmentation/output.mha`, on the same grid as the input image.
 
-## Questions?
+Detection is a single boolean, not a mask. Segmentation is a mask, not a boolean. Use the example that matches the phase you are entering.
 
-If you have any questions or need further assistance, please don't hesitate to contact us:
+## Examples
 
-* Emily Dennis: Emily.Dennis@hsc.utah.edu
-* Adrian Onicas: adrian.onicas@hsc.utah.edu
+- `example-algorithm-detection/` writes the boolean output for the Detection phase.
+- `example-algorithm-segmentation/` writes the mask output for the Segmentation phase.
+
+Each folder uses the same workflow:
+
+1. Run `./test_run.sh` to build the container and run it on the bundled test input, writing to `test/output`.
+2. Replace the prediction function with your own method.
+3. Run `./save.sh` to produce the `.tar.gz` image you upload to Grand Challenge.
+
+## How to submit
+
+1. On the challenge site go to **Submit** and choose the phase (Detection or Segmentation).
+2. If you have no algorithm yet, use the link there to create one. It pre-sets the correct input and output sockets for that phase, so do not build a standalone algorithm with sockets chosen by hand.
+3. Upload the `.tar.gz` from `save.sh` as the algorithm's container image and wait for it to become active.
+4. **GPU**: the Segmentation phase requires the NVIDIA T4 tier. Set it on the algorithm under **Job requires gpu type**. The Detection example uses no GPU, so No GPU is fine there. The GPU type is a setting on the algorithm, not inside the container image, and cannot be changed on the image page.
+5. Submit to the phase.
+
+## Evaluation metrics
+
+**Detection** (computed per image, then averaged)
+- Sensitivity, Specificity, Balanced accuracy. A scan counts as lesion-positive when its ground truth contains a connected lesion of at least 10 voxels.
+
+**Segmentation** (computed per scan, then averaged)
+- Dice (overall, lesion-only, no-lesion), Hausdorff distance 95th percentile, average symmetric surface distance. Connected components of 50 voxels or fewer are removed from both masks before scoring. The two surface distances are reported only where both masks are non-empty.
+
+## Ground truth
+
+Ground truth is held by the organizers and supplied to the evaluation at runtime. It is not part of this repository.
+
+## Local testing tips
+
+- Test locally before uploading. The website environment is slower to iterate on.
+- The container runs with no internet (`--network none`). Include any model weights inside the image.
+
+## Questions
+
+- Emily Dennis: Emily.Dennis@hsc.utah.edu
+- Adrian Onicas: adrian.onicas@hsc.utah.edu
