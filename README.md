@@ -1,69 +1,43 @@
-# AIMS-TBI 2026 Challenge
+# AIMS-TBI-challenge
 
-Automated Identification of Moderate-Severe Traumatic Brain Injury Lesions, third edition, MICCAI 2026.
-Register and submit at https://aims-tbi26.grand-challenge.org/
+This repository provides baseline example algorithms for the [AIMS-TBI 2026 Challenge](https://aims-tbi26.grand-challenge.org/). Participants can use these templates to develop and package their methods as Docker containers for evaluation on the challenge platform.
 
-This repository provides the runtime contract and example algorithms for both challenge tasks.
+## Challenge Description
 
-The 2026 challenge has two separate phases, each with its own leaderboard:
+AIMS-TBI 2026 is the 3rd iteration of the Automated Identification of Moderate-Severe
+Traumatic Brain Injury Lesions challenge, held at MICCAI 2026 in association with the
+BraTS challenges and BrainWorks workshop. This year the challenge features two tasks —
+**lesion detection** and **lesion segmentation** — with dual leaderboards.
 
-- **Detection**: for each scan, decide whether a lesion is present. Image-level classification.
-- **Segmentation**: delineate the lesion voxels.
+Visit the [official challenge page](https://aims-tbi26.grand-challenge.org/) for registration and submissions.
 
-Training data are multimodal MRI. Evaluation uses the T1-weighted scan only.
+For the complete challenge design document, see the
+[challenge proposal](307-AIMS-TBI_-_Automated_Identification_of_Moderate-Severe_Traumatic_Brain_2026-02-23T21-16-18%20(1).pdf).
 
-## What your algorithm reads and writes
+## Example Algorithms
 
-Every algorithm receives one input and must produce one output, defined by Grand Challenge "sockets". At runtime the input image is always provided as `.mha`.
+This year there are two tasks, so there are two example folders. Use the one for the task you are entering:
 
-**Input (both tasks)**
-- Socket `t1-brain-mri`. Provided at `/input/images/t1-brain-mri/<id>.mha`.
+* **`example-algorithm-detection/`** — for lesion detection. It outputs a single true/false answer indicating whether a lesion is present.
+* **`example-algorithm-segmentation/`** — for lesion segmentation. It outputs a lesion mask.
 
-**Output for Detection**
-- Socket `brain-lesion-presence`. Write a single JSON boolean (`true` if a lesion is present, `false` otherwise) to `/output/brain-lesion-presence.json`.
+## Getting Started
 
-**Output for Segmentation**
-- Socket `traumatic-brain-injury-segmentation`. Write a binary mask (0 background, 1 lesion) to `/output/images/tbi-segmentation/output.mha`, on the same grid as the input image.
+1. **Test Run:** In the example folder for your task, execute `test_run.sh` to run the Python script `inference.py`. This will give you a basic idea of how the process works.
 
-Detection is a single boolean, not a mask. Segmentation is a mask, not a boolean. Use the example that matches the phase you are entering.
+2. **Implement Your Method:** Open `inference.py` and modify the prediction function to include your own algorithm. For detection, return whether a lesion is present; for segmentation, return your lesion mask.
 
-## Examples
+3. **Save Docker Image:** Once you're satisfied with your results, run `save.sh` to create the Docker image. This image is what you'll submit to the challenge.
 
-- `example-algorithm-detection/` writes the boolean output for the Detection phase.
-- `example-algorithm-segmentation/` writes the mask output for the Segmentation phase.
+## Recommendations
 
-Each folder uses the same workflow:
+* **Test Locally:** It's strongly recommended to thoroughly test your implementation locally before generating the final Docker image. The challenge website's environment can be time-consuming.
 
-1. Run `./test_run.sh` to build the container and run it on the bundled test input, writing to `test/output`.
-2. Replace the prediction function with your own method.
-3. Run `./save.sh` to produce the `.tar.gz` image you upload to Grand Challenge.
+* **GPU:** The segmentation task runs on an NVIDIA T4 GPU. After uploading your algorithm, set its required GPU type to T4 on the Grand Challenge algorithm page.
 
-## How to submit
+## Questions?
 
-1. On the challenge site go to **Submit** and choose the phase (Detection or Segmentation).
-2. If you have no algorithm yet, use the link there to create one. It pre-sets the correct input and output sockets for that phase, so do not build a standalone algorithm with sockets chosen by hand.
-3. Upload the `.tar.gz` from `save.sh` as the algorithm's container image and wait for it to become active.
-4. **GPU**: the Segmentation phase requires the NVIDIA T4 tier. Set it on the algorithm under **Job requires gpu type**. The Detection example uses no GPU, so No GPU is fine there. The GPU type is a setting on the algorithm, not inside the container image, and cannot be changed on the image page.
-5. Submit to the phase.
+If you have any questions or need further assistance, please don't hesitate to contact us:
 
-## Evaluation metrics
-
-**Detection** (computed per image, then averaged)
-- Sensitivity, Specificity, Balanced accuracy. A scan counts as lesion-positive when its ground truth contains a connected lesion of at least 10 voxels.
-
-**Segmentation** (computed per scan, then averaged)
-- Dice (overall, lesion-only, no-lesion), Hausdorff distance 95th percentile, average symmetric surface distance. Connected components of 50 voxels or fewer are removed from both masks before scoring. The two surface distances are reported only where both masks are non-empty.
-
-## Ground truth
-
-Ground truth is held by the organizers and supplied to the evaluation at runtime. It is not part of this repository.
-
-## Local testing tips
-
-- Test locally before uploading. The website environment is slower to iterate on.
-- The container runs with no internet (`--network none`). Include any model weights inside the image.
-
-## Questions
-
-- Emily Dennis: Emily.Dennis@hsc.utah.edu
-- Adrian Onicas: adrian.onicas@hsc.utah.edu
+* Emily Dennis: Emily.Dennis@hsc.utah.edu
+* Adrian Onicas: adrian.onicas@hsc.utah.edu
