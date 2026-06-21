@@ -5,8 +5,6 @@ Register and submit at https://aims-tbi26.grand-challenge.org/
 
 This repository provides the runtime contract and example algorithms for both challenge tasks.
 
-## Two tasks, two leaderboards
-
 The 2026 challenge has two separate phases, each with its own leaderboard:
 
 - **Detection**: for each scan, decide whether a lesion is present. Image-level classification.
