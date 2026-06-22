@@ -29,6 +29,10 @@ This year there are two tasks, so there are two example folders. Use the one for
 
 3. **Save Docker Image:** Once you're satisfied with your results, run `save.sh` to create the Docker image. This image is what you'll submit to the challenge.
 
+## Submissions
+
+Only **2 submissions** are allowed. Please test your method thoroughly before submitting.
+
 ## Recommendations
 
 * **Test Locally:** It's strongly recommended to thoroughly test your implementation locally before generating the final Docker image. The challenge website's environment can be time-consuming.
