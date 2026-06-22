@@ -29,6 +29,10 @@ This year there are two tasks, so there are two example folders. Use the one for
 
 3. **Save Docker Image:** Once you're satisfied with your results, run `save.sh` to create the Docker image. This image is what you'll submit to the challenge.
 
+## Preliminary Development Phase
+
+The preliminary development phase is intended for testing your container, that is, confirming it builds, runs, and produces valid output on the platform. The number of ground-truth images in this phase is small, so the scores it returns are not a reliable estimate of your method's performance. Use it to check that your submission works, not to judge accuracy.
+
 ## Submissions
 
 Only **2 submissions** are allowed. Please test your method thoroughly before submitting.
