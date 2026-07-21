@@ -1,0 +1,5 @@
+SimpleITK
+numpy
+pandas
+connected-components-3d
+scipy
